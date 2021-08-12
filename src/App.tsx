@@ -1,115 +1,151 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
+import React, {FC} from 'react';
 
- import React from 'react';
- import {
-   SafeAreaView,
-   ScrollView,
-   StatusBar,
-   StyleSheet,
-   Text,
-   useColorScheme,
-   View,
- } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import {createStackNavigator} from '@react-navigation/stack';
+import {StyleSheet, Text, View} from 'react-native';
+import {colors} from './utils/styles';
 
- import {
-   Colors,
-   DebugInstructions,
-   Header,
-   LearnMoreLinks,
-   ReloadInstructions,
- } from 'react-native/Libraries/NewAppScreen';
+import HomeScreen from './screens/HomeScreen';
+import GroupsScreen from './screens/GroupsScreen';
+import GamingScreen from './screens/GamingScreen';
+import WatchScreen from './screens/WatchScreen';
+import NotificationScreen from './screens/NotificationScreen';
+import MenuScreen from './screens/MenuScreen';
 
- const Section: React.FC<{
-   title: string;
- }> = ({children, title}) => {
-   const isDarkMode = useColorScheme() === 'dark';
-   return (
-     <View style={styles.sectionContainer}>
-       <Text
-         style={[
-           styles.sectionTitle,
-           {
-             color: isDarkMode ? Colors.white : Colors.black,
-           },
-         ]}>
-         {title}
-       </Text>
-       <Text
-         style={[
-           styles.sectionDescription,
-           {
-             color: isDarkMode ? Colors.light : Colors.dark,
-           },
-         ]}>
-         {children}
-       </Text>
-     </View>
-   );
- };
+import HomeIcon from './icons/HomeIcon';
+import GroupIcon from './icons/GroupIcon';
+import WatchIcon from './icons/WatchIcon';
+import PlayIcon from './icons/PlayIcon';
+import BellIcon from './icons/BellIcon';
+import MenuIcon from './icons/MenuIcon';
 
- const App = () => {
-   const isDarkMode = useColorScheme() === 'dark';
+import AppHeader from './ui/AppHeader';
+import SearchScreen from './screens/SearchScreen';
 
-   const backgroundStyle = {
-     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-   };
+const Tab = createMaterialTopTabNavigator();
 
-   return (
-     <SafeAreaView style={backgroundStyle}>
-       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-       <ScrollView
-         contentInsetAdjustmentBehavior="automatic"
-         style={backgroundStyle}>
-         <Header />
-         <View
-           style={{
-             backgroundColor: isDarkMode ? Colors.black : Colors.white,
-           }}>
-           <Section title="Step One">
-             Edit <Text style={styles.highlight}>App.js</Text> to change this
-             screen and then come back to see your edits.
-           </Section>
-           <Section title="See Your Changes">
-             <ReloadInstructions />
-           </Section>
-           <Section title="Debug">
-             <DebugInstructions />
-           </Section>
-           <Section title="Learn More">
-             Read the docs to discover what to do next:
-           </Section>
-           <LearnMoreLinks />
-         </View>
-       </ScrollView>
-     </SafeAreaView>
-   );
- };
+const App: FC = () => {
+  return (
+    <NavigationContainer>
+      <AppHeader />
+      <Tab.Navigator
+        initialRouteName="HomeScreen"
+        screenOptions={{
+          tabBarStyle: {
+            height: 70,
+            justifyContent: 'center',
+            backgroundColor: colors.primaryBackground,
+          },
+        }}>
+        <Tab.Screen
+          name="HomeScreen"
+          component={HomeScreen}
+          options={{
+            tabBarLabel: () => null,
+            tabBarIcon: ({focused}) => (
+              <View style={styles.iconContainer}>
+                <HomeIcon color={focused ? colors.blue : undefined} />
+              </View>
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="GroupScreen"
+          component={GroupsScreen}
+          options={{
+            tabBarLabel: () => null,
+            tabBarIcon: ({focused}) => (
+              <View style={styles.iconContainer}>
+                <GroupIcon color={focused ? colors.blue : undefined} />
+              </View>
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="WatchScreen"
+          component={WatchScreen}
+          options={{
+            tabBarLabel: () => null,
+            tabBarIcon: ({focused}) => (
+              <View style={styles.iconContainer}>
+                <WatchIcon color={focused ? colors.blue : undefined} />
+              </View>
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="GamingScreen"
+          component={GamingScreen}
+          options={{
+            tabBarLabel: () => null,
+            tabBarIcon: ({focused}) => (
+              <View style={styles.iconContainer}>
+                <PlayIcon color={focused ? colors.blue : undefined} />
+              </View>
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="NotificationScreen"
+          component={NotificationScreen}
+          options={{
+            tabBarLabel: () => null,
+            tabBarIcon: ({focused}) => (
+              <View style={styles.iconContainer}>
+                <View style={styles.badge}>
+                  <Text style={styles.boldText}>3</Text>
+                </View>
+                <BellIcon color={focused ? colors.blue : undefined} />
+              </View>
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="MenuScreen"
+          component={MenuScreen}
+          options={{
+            tabBarLabel: () => null,
+            tabBarIcon: ({focused}) => (
+              <View style={styles.iconContainer}>
+                <MenuIcon color={focused ? colors.blue : undefined} />
+              </View>
+            ),
+          }}
+        />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+};
 
- const styles = StyleSheet.create({
-   sectionContainer: {
-     marginTop: 32,
-     paddingHorizontal: 24,
-   },
-   sectionTitle: {
-     fontSize: 24,
-     fontWeight: '600',
-   },
-   sectionDescription: {
-     marginTop: 8,
-     fontSize: 18,
-     fontWeight: '400',
-   },
-   highlight: {
-     fontWeight: '700',
-   },
- });
+export default App;
 
- export default App;
+const styles = StyleSheet.create({
+  iconContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'relative',
+  },
+
+  badge: {
+    backgroundColor: colors.crimson,
+    width: 25,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 25,
+    borderRadius: 50,
+    borderColor: 'white',
+    borderWidth: 1,
+    position: 'absolute',
+    top: -10,
+    right: -10,
+    zIndex: 1,
+  },
+
+  boldText: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 13,
+  },
+});
