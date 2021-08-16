@@ -1,15 +1,20 @@
 import React from 'react';
-import {Pressable, Text, View} from 'react-native';
+
+import PostPicker from '../ui/PostPicker';
+
+import {View} from 'react-native';
+import {screenContainer} from '../utils/styles';
+import ButtonComponent from '../ui/inputs/ButtonComponent';
+import RoomDwarf from '../ui/RoomDwarf';
+import CarouselWrap from '../ui/CarouselWrap';
 
 const HomeScreen = () => {
   return (
-    <>
-      <View>
-        <Pressable>
-          <Text>Home Page</Text>
-        </Pressable>
-      </View>
-    </>
+    <View style={screenContainer}>
+      <PostPicker />
+      <RoomDwarf />
+      <CarouselWrap />
+    </View>
   );
 };
 

@@ -36,6 +36,8 @@ const App: FC = () => {
             height: 70,
             justifyContent: 'center',
             backgroundColor: colors.primaryBackground,
+            borderBottomColor: colors.gray,
+            borderBottomWidth: 0.2,
           },
         }}>
         <Tab.Screen
