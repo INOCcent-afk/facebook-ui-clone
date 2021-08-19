@@ -8,7 +8,9 @@ export const colors = {
   gray: '#b0b3b8',
   crimson: '#f02849',
   green: '#45bd62',
+  lightGreen: '#31a24c',
   purple: '#6264d7',
+  white: '#e4e6eb',
 };
 
 export const text: TextStyle = {
@@ -26,7 +28,18 @@ export const textBoldMd: TextStyle = {
   fontSize: 14,
 };
 
+export const textBoldLg: TextStyle = {
+  ...boldText,
+  fontSize: 16,
+};
+
 export const screenContainer: ViewStyle = {
   flex: 1,
+  backgroundColor: colors.secondaryBackground,
+};
+
+export const feedContainer: ViewStyle = {
+  borderTopColor: 'black',
+  borderTopWidth: 8,
   backgroundColor: colors.secondaryBackground,
 };

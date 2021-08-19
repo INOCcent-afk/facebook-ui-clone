@@ -21,7 +21,6 @@ import BellIcon from './icons/BellIcon';
 import MenuIcon from './icons/MenuIcon';
 
 import AppHeader from './ui/AppHeader';
-import SearchScreen from './screens/SearchScreen';
 
 const Tab = createMaterialTopTabNavigator();
 

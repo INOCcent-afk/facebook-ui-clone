@@ -1,20 +1,23 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 import PostPicker from '../ui/PostPicker';
 
-import {View} from 'react-native';
 import {screenContainer} from '../utils/styles';
-import ButtonComponent from '../ui/inputs/ButtonComponent';
 import RoomDwarf from '../ui/RoomDwarf';
 import CarouselWrap from '../ui/CarouselWrap';
+import {ScrollView} from 'react-native-gesture-handler';
+import Feed from '../ui/Feed';
 
 const HomeScreen = () => {
   return (
-    <View style={screenContainer}>
+    <ScrollView style={screenContainer}>
       <PostPicker />
       <RoomDwarf />
       <CarouselWrap />
-    </View>
+      {Array.from({length: 30}, (_, i) => (
+        <Feed key={i} />
+      ))}
+    </ScrollView>
   );
 };
 
