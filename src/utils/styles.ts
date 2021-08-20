@@ -33,6 +33,11 @@ export const textBoldLg: TextStyle = {
   fontSize: 16,
 };
 
+export const textBoldXl: TextStyle = {
+  ...boldText,
+  fontSize: 24,
+};
+
 export const screenContainer: ViewStyle = {
   flex: 1,
   backgroundColor: colors.secondaryBackground,

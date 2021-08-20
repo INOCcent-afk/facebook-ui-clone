@@ -14,7 +14,7 @@ const RoomDwarf = () => {
       <View style={styles.wrapper}>
         <ButtonComponent />
         <ScrollView style={styles.userdisplayContainer} horizontal>
-          {Array.from({length: 30}, (_, i) => (
+          {Array.from({length: 5}, (_, i) => (
             <View key={i} style={styles.userdisplayWrapper}>
               <UserDisplay badge={true} />
             </View>

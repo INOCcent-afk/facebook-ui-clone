@@ -6,7 +6,7 @@ import StoryCard from './StoryCard';
 const CarouselWrap = () => {
   return (
     <ScrollView style={styles.container} horizontal>
-      {Array.from({length: 30}, (_, i) => (
+      {Array.from({length: 5}, (_, i) => (
         <View key={i} style={styles.slide}>
           <StoryCard name="Michael Dave" />
         </View>

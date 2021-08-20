@@ -14,7 +14,7 @@ const HomeScreen = () => {
       <PostPicker />
       <RoomDwarf />
       <CarouselWrap />
-      {Array.from({length: 30}, (_, i) => (
+      {Array.from({length: 5}, (_, i) => (
         <Feed key={i} />
       ))}
     </ScrollView>

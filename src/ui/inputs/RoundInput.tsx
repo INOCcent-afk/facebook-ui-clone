@@ -1,12 +1,17 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+
 import {StyleSheet, TextInput} from 'react-native';
 import {colors} from '../../utils/styles';
 
 const RoundInput = () => {
+  const [input, setInput] = useState('');
+
   return (
     <TextInput
       style={styles.input}
       placeholder="What's on your mind?"
+      value={input}
+      onChangeText={val => setInput(val)}
       placeholderTextColor={colors.gray}></TextInput>
   );
 };

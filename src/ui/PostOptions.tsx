@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import CameraIcon from '../icons/CameraIcon';
 import PhotoIcon from '../icons/PhotoIcon';
