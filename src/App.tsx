@@ -2,7 +2,6 @@ import React, {FC} from 'react';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import {createStackNavigator} from '@react-navigation/stack';
 import {StyleSheet, Text, View} from 'react-native';
 import {colors} from './utils/styles';
 
@@ -28,6 +27,7 @@ const App: FC = () => {
   return (
     <NavigationContainer>
       <AppHeader />
+
       <Tab.Navigator
         initialRouteName="HomeScreen"
         screenOptions={{

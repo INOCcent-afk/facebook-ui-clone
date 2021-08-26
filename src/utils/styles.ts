@@ -48,3 +48,21 @@ export const feedContainer: ViewStyle = {
   borderTopWidth: 8,
   backgroundColor: colors.secondaryBackground,
 };
+
+export const roundDropBg: ViewStyle = {
+  backgroundColor: colors.primaryBackground,
+  paddingVertical: 10,
+  paddingHorizontal: 20,
+};
+
+export const horizontalScroll: ViewStyle = {
+  flexDirection: 'row',
+  padding: 10,
+};
+
+export const ml10: ViewStyle = {
+  marginLeft: 10,
+};
+export const mr10: ViewStyle = {
+  marginRight: 10,
+};

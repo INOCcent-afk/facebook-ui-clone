@@ -1,8 +1,9 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import {text, textBoldLg} from '../utils/styles';
+
 import DotsHorizontal from '../icons/DotsHorizontal';
 import GroupIcon from '../icons/GroupIcon';
-import {text, textBoldLg} from '../utils/styles';
 import UserDisplay from './UserDisplay';
 
 const FeedTItle = () => {
